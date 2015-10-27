@@ -1,0 +1,10 @@
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+<img src="https://myavantiservices.files.wordpress.com/2015/02/helloworld.gif?w=300&h=129" alt="Hello World" style="width:300px;height129px;">
+
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
